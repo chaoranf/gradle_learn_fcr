@@ -41,7 +41,8 @@ android {
                             output.assemble.doLast {
                                 copy {
                                     from variant.mappingFile.path
-                                    into "\\\\192.168.0.123\\public\\android打包\\${defaultConfig.versionName}\\${defaultConfig.versionName}_mapping.txt"
+                                    into "\\\\192.168.0.123\\public\\android打包\\${defaultConfig.versionName}"
+                                    rename("mapping.txt", "${defaultConfig.versionName}_mapping.txt")
                                 }
                             }
                         }
